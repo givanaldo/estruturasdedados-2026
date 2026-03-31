@@ -19,7 +19,9 @@ public class Cliente {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (this.nome.isEmpty())
+            this.nome = nome;
+        else System.out.println("Erro.");
     }
 
     public String getEndereço() {
