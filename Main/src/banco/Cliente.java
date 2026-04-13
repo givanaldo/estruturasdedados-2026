@@ -2,16 +2,16 @@ package banco;
 
 public class Cliente {
     private String nome;
-    private String endereço;
+    private String endereco;
 
-    public Cliente(String nome, String endereço) {
+    public Cliente(String nome, String endereco) {
         this.nome = nome;
-        this.endereço = endereço;
+        this.endereco = endereco;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "nome=" + nome + ", endere\u00e7o=" + endereço + '}';
+        return "Cliente{" + "nome=" + nome + ", endere\u00e7o=" + endereco + '}';
     }
 
     public String getNome() {
@@ -24,12 +24,12 @@ public class Cliente {
         else System.out.println("Erro.");
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
     
 }

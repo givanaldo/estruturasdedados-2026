@@ -1,40 +1,25 @@
 package banco;
 
-public class Conta {
-    private Cliente cliente;
-    private int numero;
-    private float saldo;
+public abstract class Conta {
+    private final Cliente titular;
+    protected double saldo; // 'protected' permite que as filhas acessem diretamente
 
-    @Override
-    public String toString() {
-        return "Conta{" + "cliente=" + cliente + ", numero=" + numero + ", saldo=" + saldo + '}';
+    public Conta(Cliente titular, double saldoInicial) {
+        this.titular = titular;
+        this.saldo = saldoInicial;
     }
 
-    public Conta(Cliente cliente, int numero, float saldo) {
-        this.cliente = cliente;
-        this.numero = numero;
-        this.saldo = saldo;
+public void depositar(double valor) {
+        if (valor > 0) {
+            this.saldo += valor;
+            System.out.println("Depósito de R$" + valor + " para " + titular.getNome());
+        }
     }
 
-    public Conta(Cliente cliente, int numero) {
-        this.cliente = cliente;
-        this.numero = numero;
-    }
+    public abstract boolean sacar(double valor); // Podemos tornar o saque abstrato se quisermos forçar a implementação
 
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public float getSaldo() {
-        return saldo;
-    }
-    
-}
+    public void exibirDados() {
+        System.out.println("Cliente: " + titular.getNome());
+        System.out.println("Endereço: " + titular.getEndereco());
+        System.out.println("Saldo Atual: R$" + saldo);
+    }}
