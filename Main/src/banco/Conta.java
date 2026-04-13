@@ -1,7 +1,6 @@
 package banco;
 
 public abstract class Conta {
-
     private final Cliente titular;
     protected double saldo;
 
@@ -13,14 +12,14 @@ public abstract class Conta {
     public void depositar(double valor) {
         if (valor > 0) {
             this.saldo += valor;
-            System.out.println("Depósito de R$" + valor + " para " + titular.getNome());
+            System.out.println("Deposito de R$" + valor + " para " + titular.getNome());
         }
     }
 
     public abstract boolean sacar(double valor);
 
     public double getSaldo() {
-        return this.saldo;
+        return saldo;
     }
 
     public Cliente getTitular() {
@@ -29,8 +28,8 @@ public abstract class Conta {
 
     public void exibirDados() {
         System.out.println("Cliente: " + titular.getNome());
-        System.out.println("Endereço: " + titular.getEndereco());
-        System.out.println("Saldo Atual: R$" + saldo);
+        System.out.println("Endereco: " + titular.getEndereco());
+        System.out.println("Saldo atual: R$" + saldo);
     }
 
 }

@@ -20,4 +20,14 @@ public class ContaCorrente extends Conta {
         }
         return false;
     }
+
+    @Override
+    public void exibirDados() {
+        super.exibirDados();
+        System.out.println("Limite: R$" + limite);
+        System.out.println("Total de saldo: R$" + (saldo + limite));
+    }
+    
+    
+    
 }

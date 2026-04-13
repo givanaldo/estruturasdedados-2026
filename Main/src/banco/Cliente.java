@@ -21,7 +21,7 @@ public class Cliente {
     public void setNome(String nome) {
         if (this.nome.isEmpty())
             this.nome = nome;
-        else System.out.println("Erro.");
+        else System.out.println("Erro, nome não está vazio.");
     }
 
     public String getEndereco() {
@@ -29,7 +29,9 @@ public class Cliente {
     }
 
     public void setEndereco(String endereco) {
-        this.endereco = endereco;
+        if (this.endereco.isEmpty())
+            this.endereco = endereco;
+        else System.out.println("Erro, endereço não está vazio.");
     }
     
 }
