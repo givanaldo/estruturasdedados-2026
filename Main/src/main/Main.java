@@ -1,18 +1,23 @@
 package main;
-import banco.Cliente;
-import banco.Conta;
+
+import banco.*;
 
 public class Main {
-
     public static void main(String[] args) {
-        Cliente cliente;
-        // faz de conta que usei Scanner
-        cliente = new Cliente("Fulano Dital",
-                "Rua da Esperança, 25 - Parnamirim");
-        Conta conta1 = new Conta(cliente, 12345, 200);
-        Conta conta2 = new Conta(cliente, 00225);
-        System.out.println(conta1.toString());
-        System.out.println(conta2.toString());
+        // Criando o Cliente
+        Cliente clienteComum = new Cliente("Ricardo Silva", "Av. Central, 500");
+
+        // Testando Conta Corrente (com limite)
+        ContaCorrente cc = new ContaCorrente(clienteComum, 100.0, 200.0);
+        cc.sacar(250.0); // Deve permitir (usa o limite)
+        cc.exibirDados();
+
+        System.out.println("-------------------------");
+
+        // Testando Conta Poupança (sem limite)
+        ContaPoupanca cp = new ContaPoupanca(clienteComum, 100.0);
+        cp.sacar(250.0); // Deve negar (não tem limite)
+        cp.aplicarRendimento(10.0); // Rende 10% sobre os 100.0
+        cp.exibirDados();
     }
-    
 }
