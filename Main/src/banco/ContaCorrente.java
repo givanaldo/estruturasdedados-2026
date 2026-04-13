@@ -8,6 +8,10 @@ public class ContaCorrente extends Conta {
         this.limite = limite;
     }
 
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
+
     @Override
     public boolean sacar(double valor) {
         if (valor > 0 && valor <= (this.saldo + this.limite)) {

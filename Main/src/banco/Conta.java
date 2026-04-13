@@ -3,7 +3,7 @@ package banco;
 public abstract class Conta {
 
     private final Cliente titular;
-    protected double saldo; // 'protected' permite que as filhas acessem diretamente
+    protected double saldo;
 
     public Conta(Cliente titular, double saldoInicial) {
         this.titular = titular;
@@ -17,7 +17,7 @@ public abstract class Conta {
         }
     }
 
-    public abstract boolean sacar(double valor); // Podemos tornar o saque abstrato se quisermos forçar a implementação
+    public abstract boolean sacar(double valor);
 
     public double getSaldo() {
         return this.saldo;
