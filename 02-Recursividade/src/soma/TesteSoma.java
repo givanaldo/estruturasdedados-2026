@@ -5,8 +5,12 @@ import java.util.Scanner;
 public class TesteSoma {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Numero: ");
-        int n = sc.nextInt();
+        int n;
+        do {
+            System.out.print("Numero: ");
+            n = sc.nextInt();
+            if (n<0) System.out.println("Digite numero positivo");
+        } while (n < 0);
 
         long ini, fim;
         
