@@ -1,4 +1,4 @@
-package main;
+package basico;
 
 public class Aluno extends Pessoa {
     private String matricula;

@@ -1,4 +1,4 @@
-package main;
+package basico;
 
 public class Pessoa {
     private String nome;
