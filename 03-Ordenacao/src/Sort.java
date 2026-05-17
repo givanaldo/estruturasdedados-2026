@@ -1,5 +1,5 @@
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class Sort {
 
@@ -12,7 +12,7 @@ public class Sort {
                     v[j] = v[j + 1];
                     v[j + 1] = aux;
                 }
-                System.out.println(Arrays.toString(v)); // passo-a-passo
+                //System.out.println(Arrays.toString(v)); // passo-a-passo
             }
         }
     }
@@ -26,7 +26,7 @@ public class Sort {
                     v[j] = v[i];
                     v[i] = aux;
                 }
-                System.out.println(Arrays.toString(v)); // passo-a-passo
+                //System.out.println(Arrays.toString(v)); // passo-a-passo
             }
         }
     }
@@ -41,7 +41,7 @@ public class Sort {
                 j = j - 1;
             }
             v[j + 1] = aux;
-            System.out.println(Arrays.toString(v)); // passo-a-passo
+            //System.out.println(Arrays.toString(v)); // passo-a-passo
         }
     }
 
@@ -59,7 +59,33 @@ public class Sort {
                     j = j - gap;
                 }
                 v[j] = aux;
-                System.out.println(Arrays.toString(v)); // passo-a-passo
+                //System.out.println(Arrays.toString(v)); // passo-a-passo
+            }
+            gap = gap / 2;
+        }
+    }
+    
+    public static void shellsort2(int[] v) {
+        int n = v.length;
+        int gap = 1;
+
+        while (gap < n) {
+            gap = gap * 3 + 1;
+        }
+
+        gap = gap / 3;
+        int aux, j;
+
+        while (gap > 0) {
+            for (int i = gap; i < n; i++) {
+                aux = v[i];
+                j = i;
+                while (j >= gap && v[j - gap] > aux) {
+                    v[j] = v[j - gap];
+                    j = j - gap;
+                }
+                v[j] = aux;
+                //System.out.println(Arrays.toString(v)); // passo-a-passo      
             }
             gap = gap / 2;
         }
