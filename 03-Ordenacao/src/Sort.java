@@ -3,6 +3,9 @@
 
 public class Sort {
 
+    // Algoritmos simples de Ordenação 
+    // Bubble, Selection, Insertion e Shell
+    
     public static void bubblesort(int[] v) {
         int n = v.length;
         for (int i = 0; i <= n - 2; i++) {
@@ -90,4 +93,8 @@ public class Sort {
             gap = gap / 2;
         }
     }
+    
+    // Algoritmos de Divisão e Conquista para Ordenação
+    // Merge e Quick
+    
 }
