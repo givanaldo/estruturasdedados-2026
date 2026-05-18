@@ -1,6 +1,3 @@
-
-import java.util.Random;
-
 public class TestesSimples {
     public static void imprimirVetor(String texto, int [] v) {
         System.out.print(texto);

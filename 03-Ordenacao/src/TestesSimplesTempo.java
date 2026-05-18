@@ -10,7 +10,7 @@ public class TestesSimplesTempo {
     }
 
     public static void main(String[] args) {
-        int n = 10000;
+        int n = 1000;
         long inicio, fim;
         Random numero = new Random();
         
@@ -22,6 +22,9 @@ public class TestesSimplesTempo {
         int[] vetor3 = vetor1.clone();
         int[] vetor4 = vetor1.clone();
         int[] vetor5 = vetor1.clone();
+        int[] vetor6 = vetor1.clone();
+        int[] vetor7 = vetor1.clone();
+        
         
         inicio = System.currentTimeMillis();
         Sort.bubblesort(vetor1);
@@ -37,7 +40,7 @@ public class TestesSimplesTempo {
         Sort.insertionsort(vetor3);
         fim = System.currentTimeMillis();
         System.out.println("Insertion sort: " + (fim - inicio) + " milisegundos");
-
+        
         inicio = System.currentTimeMillis();
         Sort.shellsort(vetor4);
         fim = System.currentTimeMillis();
@@ -47,5 +50,16 @@ public class TestesSimplesTempo {
         Sort.shellsort2(vetor5);
         fim = System.currentTimeMillis();
         System.out.println("Shell sort gap otimizado: " + (fim - inicio) + " milisegundos");        
+        
+        inicio = System.currentTimeMillis();
+        Sort.mergesort(vetor6);
+        fim = System.currentTimeMillis();
+        System.out.println("Mergesort: " + (fim - inicio) + " milisegundos");        
+
+        inicio = System.currentTimeMillis();
+        Sort.quicksort(vetor7);
+        fim = System.currentTimeMillis();
+        System.out.println("Quicksort: " + (fim - inicio) + " milisegundos");        
+        
     }
 }

@@ -69,7 +69,6 @@ public class Sort {
     public static void shellsort2(int[] v) {
         int n = v.length;
         int gap = 1;
-
         while (gap < n) {
             gap = gap * 3 + 1;
         }
@@ -123,31 +122,50 @@ public class Sort {
         }
     }
 
-    public static void quicksort(int[] v, int low, int high) {
-        if (low >= high) {
+    public static void quicksort(int[] v) {
+        partition(v, 0, v.length - 1);
+    }
+
+    private static void partition(int[] v, int left, int right) {
+        if (v == null || v.length == 0) {
             return;
         }
-        int pivotIndex = partition(v, low, high);
-        quicksort(v, low, pivotIndex - 1);
-        quicksort(v, pivotIndex + 1, high);
-    }
 
-    private static int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
-        int i = low - 1;
-        for (int j = low; j < high; j++) {
-            if (arr[j] < pivot) {
+        if (left >= right) {
+            return;
+        }
+
+        // selecionar pivô
+        int middle = left + (right - left) / 2;
+        int pivot = v[middle];
+
+        // esquerda < pivô e direita > pivô
+        int i = left, j = right;
+        while (i <= j) {
+            while (v[i] < pivot) {
                 i++;
-                swap(arr, i, j);
+            }
+
+            while (v[j] > pivot) {
+                j--;
+            }
+
+            if (i <= j) {
+                int temp = v[i];
+                v[i] = v[j];
+                v[j] = temp;
+                i++;
+                j--;
             }
         }
-        swap(arr, i + 1, high);
-        return i + 1;
-    }
 
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        // ordene as duas partes recursivamente
+        if (left < j) {
+            partition(v, left, j);
+        }
+
+        if (right > i) {
+            partition(v, i, right);
+        }
     }
 }
