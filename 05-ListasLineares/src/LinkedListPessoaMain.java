@@ -21,6 +21,7 @@ public class LinkedListPessoaMain {
         imprimeLista(agenda);
         agenda.addFirst(new Pessoa("Jorge Jesus", "21 6666-5555"));
         imprimeLista(agenda);
+        // como remover um item a partyir do nome
         agenda.remove(new Pessoa("Neymar Junior", "21 1230-8745"));
         imprimeLista(agenda);
         
