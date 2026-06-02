@@ -22,7 +22,7 @@ public class LinkedListPessoaMain {
         agenda.addFirst(new Pessoa("Jorge Jesus", "21 6666-5555"));
         imprimeLista(agenda);
         // como remover um item a partir do nome
-        agenda.remove(new Pessoa("Neymar Junior", "21 1230-8745"));
+        agenda.remove(new Pessoa("Jose Oliveira", "81 4322-4471"));
         imprimeLista(agenda);
         
     }
