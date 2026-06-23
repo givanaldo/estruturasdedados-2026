@@ -64,7 +64,7 @@ public class Arvore {
     private void exibirHierarquico(No no, int nivel) {
         String indentacao = "    ".repeat(nivel);
 
-        // Se o nó for nulo, exibe o hífen e para a recursão por aqui
+        // Se o nó for nulo, exibe o hífen e encerra a recursão
         if (no == null) {
             System.out.println(indentacao + "-");
             return;
