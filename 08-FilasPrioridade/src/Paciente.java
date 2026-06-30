@@ -1,4 +1,3 @@
-// Implementa a interface Comparable
 class Paciente implements Comparable<Paciente> {
     
     private final int chavePrioridade;

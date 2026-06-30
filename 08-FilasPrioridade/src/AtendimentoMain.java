@@ -4,14 +4,13 @@ public class AtendimentoMain {
 
     public static void main(String[] args) {
         
-        // Como 'Paciente' é Comparable, não precisamos mais passar um Comparator!
         PriorityQueue<Paciente> filaAtendimento = new PriorityQueue<>();
 
-        filaAtendimento.add(new Paciente(2, "Roberto (Atendimento Geral)"));
-        filaAtendimento.add(new Paciente(1, "Dona Carmem (Idosa)"));
-        filaAtendimento.add(new Paciente(2, "Lucas (Atendimento Geral)"));
-        filaAtendimento.add(new Paciente(1, "Mateus (Paciente com NEE)"));
-        filaAtendimento.add(new Paciente(2, "Fernanda (Atendimento Geral)"));
+        filaAtendimento.add(new Paciente(3, "Roberto (Atendimento Geral)"));
+        filaAtendimento.add(new Paciente(1, "Carmem (Idosa)"));
+        filaAtendimento.add(new Paciente(3, "Lucas (Atendimento Geral)"));
+        filaAtendimento.add(new Paciente(2, "Mateus (Paciente com NEE)"));
+        filaAtendimento.add(new Paciente(1, "Fernanda (Idosa)"));
 
         System.out.println("--- Painel de Chamada da Clinica ---");
 
